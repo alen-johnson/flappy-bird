@@ -4,10 +4,12 @@ import java.util.Random;
 import java.util.ArrayList;
 import javax.swing.*;
 
+import utils.Constants;
+
 public class FlappyBird extends JPanel implements ActionListener, KeyListener {
 
-    int boardWidth = 320;
-    int boardHeight = 640;
+    int boardWidth = Constants.BOARD_WIDTH;
+    int boardHeight = Constants.BOARD_HEIGHT;
 
     Image bgImg;
     Image birdImg;
@@ -15,10 +17,10 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
     Image bottomPipeImg;
 
     // bird
-    int birdX = boardWidth / 8;
-    int birdY = boardHeight / 2;
-    int birdWidth = 34;
-    int birdHeight = 24;
+    int birdX = Constants.BIRD_X;
+    int birdY = Constants.BIRD_Y;
+    int birdWidth = Constants.BIRD_WIDTH;
+    int birdHeight = Constants.BIRD_HEIGHT;
 
     class Bird {
         int x = birdX;
@@ -33,10 +35,10 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
     }
 
     // pipes
-    int pipeX = boardWidth;
-    int pipeY = 0;
-    int pipeWidth = 64;
-    int pipeHeight = 512;
+    int pipeX = Constants.PIPE_X;
+    int pipeY = Constants.PIPE_Y;
+    int pipeWidth = Constants.PIPE_WIDTH;
+    int pipeHeight = Constants.PIPE_HEIGHT;
 
     class Pipe {
         int x = pipeX;
@@ -54,9 +56,9 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
 
     // logic
     Bird bird;
-    int velocityX = -4;
-    int velocityY = 0;
-    int gravity = 1;
+    int velocityX = Constants.VELOCITY_X;
+    int velocityY = Constants.VELOCITY_Y;
+    int gravity = Constants.GRAVITY;
 
     ArrayList<Pipe> pipes;
     Random random = new Random();
