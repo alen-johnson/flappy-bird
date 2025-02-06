@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 import utils.Constants;
+import utils.ImageLoader;
 
 public class FlappyBird extends JPanel implements ActionListener, KeyListener {
 
@@ -76,10 +77,10 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
         setFocusable(true);
         addKeyListener(this);
 
-        bgImg = new ImageIcon(getClass().getResource("./flappybirdbg.png")).getImage();
-        birdImg = new ImageIcon(getClass().getResource("./flappybird.png")).getImage();
-        topPipeImg = new ImageIcon(getClass().getResource("./toppipe.png")).getImage();
-        bottomPipeImg = new ImageIcon(getClass().getResource("./bottompipe.png")).getImage();
+        bgImg = ImageLoader.BG_IMAGE;
+        birdImg = ImageLoader.BIRD_IMAGE;
+        topPipeImg = ImageLoader.TOP_PIPE_IMAGE;
+        bottomPipeImg = ImageLoader.BOTTOM_PIPE_IMAGE;
 
         bird = new Bird(birdImg);
         pipes = new ArrayList<Pipe>();
