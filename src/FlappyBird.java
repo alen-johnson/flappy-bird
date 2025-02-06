@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.ArrayList;
 import javax.swing.*;
 
+import entity.Bird;
 import utils.Constants;
 import utils.ImageLoader;
 
@@ -17,23 +18,6 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
     Image topPipeImg;
     Image bottomPipeImg;
 
-    // bird
-    int birdX = Constants.BIRD_X;
-    int birdY = Constants.BIRD_Y;
-    int birdWidth = Constants.BIRD_WIDTH;
-    int birdHeight = Constants.BIRD_HEIGHT;
-
-    class Bird {
-        int x = birdX;
-        int y = birdY;
-        int width = birdWidth;
-        int height = birdHeight;
-        Image img;
-
-        Bird(Image img) {
-            this.img = img;
-        }
-    }
 
     // pipes
     int pipeX = Constants.PIPE_X;
@@ -82,7 +66,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
         topPipeImg = ImageLoader.TOP_PIPE_IMAGE;
         bottomPipeImg = ImageLoader.BOTTOM_PIPE_IMAGE;
 
-        bird = new Bird(birdImg);
+        bird = new Bird();
         pipes = new ArrayList<Pipe>();
 
         placePipesTimer = new Timer(1500, new ActionListener() {
@@ -193,7 +177,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
             //restart game
             if (gameOver){
 
-                bird.y = birdY;
+                bird.y = Constants.BIRD_Y;
                 velocityY = 0;
                 pipes.clear();
                 score =0;
